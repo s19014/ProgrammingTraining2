@@ -7,8 +7,18 @@ actually understand what I was reading : the phenomenal power of the human mind 
 '''
 
 
+import random
+
+
 text = 'I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind .'
 
 
-def reordering():
-    pass
+def reordering(text):
+    text_list = text.split()
+    text_first = text_list.pop(0)
+    text_last = text_list.pop(-1)
+    text_shuffle = random.shuffle(text_list)
+    return text_shuffle
+
+
+print(reordering(text))
