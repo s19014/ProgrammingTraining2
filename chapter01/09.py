@@ -11,14 +11,25 @@ import random
 
 
 text = 'I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind .'
+text2 = 'I like an aplle'
 
 
 def reordering(text):
-    text_list = text.split()
-    text_first = text_list.pop(0)
-    text_last = text_list.pop(-1)
-    text_shuffle = random.shuffle(text_list)
-    return text_shuffle
+    len_text = len(text)
+    if len_text <= 4:
+        return text
+    else:
+        text_list = text.split()
+        text_first = text_list.pop(0)
+        text_last = text_list.pop(-1)
+        random.shuffle(text_list)
+        text_list.insert(0, text_first)
+        text_list.append(text_last)
+        text_shuffle = " ".join(text_list)
+        return text_shuffle
 
 
+print("4文字以上")
 print(reordering(text))
+print("\n4文字以下")
+print(reordering(text2))
