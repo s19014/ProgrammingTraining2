@@ -5,8 +5,12 @@ quantum mechanics.”という文を単語に分解し，各単語の（アル�
 '''
 
 
+import re
+
+
 text = 'Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.'
-text_list = text.split()
+text_list = re.split('\W+', text)
+text_list.pop()
 
 word_count = []
 for word in text_list:
