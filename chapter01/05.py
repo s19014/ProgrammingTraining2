@@ -11,15 +11,16 @@ def bi_gram(text):
     word_list = []  # 単語bi-gram
     character_list = []  # 文字bi-gram
 
-    word = text.split()
-    for i in range(len(word) - 1):
-        word_list.append(word[i:i+2])
+    for i in range(len(text) - 1):
+        word_list.append(text[i:i+2])
 
-    character = ''.join(text.split())
-    for i in range(len(character)-1):
-        character_list.append(character[i:i+2])
+    character = text.split(' ')
+    for i in range(len(character) - 1):
+        character_list.append('{} {}'.format(character[i], character[i+1]))
 
     return word_list, character_list
 
 
-print(bi_gram(text))
+result = bi_gram(text)
+for r in result:
+    print(r)
