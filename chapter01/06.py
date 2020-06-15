@@ -18,16 +18,16 @@ def bi_gram(text):
     return character_list
 
 
-def se_in(target, s):
-    '''
-    targetに"se"が含まれているかの関数
-    sは変数名
-    '''
-    set_target = set(target)
-    if 'se' in set_target:
-        return '{}にseは含まれている'.format(s)
-    else:
-        return '{}にseは含まれていない'.format(s)
+# def se_in(target, s):
+#     '''
+#     targetに"se"が含まれているかの関数
+#     sは変数名
+#     '''
+#     set_target = set(target)
+#     if 'se' in set_target:
+#         return '{}にseは含まれている'.format(s)
+#     else:
+#         return '{}にseは含まれていない'.format(s)
 
 
 X, Y = bi_gram(text1), bi_gram(text2)
@@ -44,5 +44,5 @@ print('Y: {}'.format(set_Y))
 print('和集合: {}'.format(XY_union))
 print('積集合: {}'.format(XY_intersection))
 print('差集合: {}'.format(XY_difference))
-print(se_in(set_X, 'X'))
-print(se_in(set_Y, 'Y'))
+# print(se_in(set_X, 'X'))
+# print(se_in(set_Y, 'Y'))
