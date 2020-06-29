@@ -15,18 +15,16 @@ text2 = 'I like an aplle'
 
 
 def reordering(text):
-    len_text = len(text)
-    if len_text <= 4:
+    text_list = text.split()
+    if len(text_list) <= 4:
         return text
     else:
-        text_list = text.split()
         text_first = text_list.pop(0)
         text_last = text_list.pop(-1)
         random.shuffle(text_list)
         text_list.insert(0, text_first)
         text_list.append(text_last)
-        text_shuffle = " ".join(text_list)
-        return text_shuffle
+        return " ".join(text_list)
 
 
 print("4文字以上")
